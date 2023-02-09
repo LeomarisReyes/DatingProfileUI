@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DatingProfileUI.Views.ProfilePage"
+             Title="ProfilePage">
+ <ScrollView Margin="0,-90,0,-40" VerticalScrollBarVisibility="Never">
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="15" Margin="30,0,30,30"
+              ColumnDefinitions="*,*,*">
+            <!-- Rounded main picture-->
+            <Frame  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="-30,-25,-30,-30" CornerRadius="40"
+                    IsClippedToBounds="True" Padding="0">
+                <Image Aspect="AspectFill" Source="model.jpeg" HorizontalOptions="FillAndExpand" HeightRequest="410" />
+            </Frame>
+            <!-- Floating Buttons-->
+
+            <!-- Delete Button-->
+            <Button Grid.Column="0" Grid.Row="1" Margin="0,-50,0,0" HeightRequest="80" WidthRequest="80" CornerRadius="40" ImageSource="delete" BackgroundColor="White">
+                <Button.Shadow>
+                       <Shadow Brush="#bcbcbc"
+                           Offset="5,5" 
+                           Opacity="0.6"/>
+                </Button.Shadow>
+            </Button>
+            <!-- Like Button-->
+            <Button Grid.Column="1" Grid.Row="1" Margin="0,-50,0,0" HeightRequest="110" WidthRequest="110" CornerRadius="55" ImageSource="heartt" BackgroundColor="#f858a4">
+                <Button.Shadow>
+                           <Shadow Brush="#f8bcd9"
+                               Offset="5,5" 
+                               Opacity="0.6"/>
+                    </Button.Shadow>
+            </Button>
+            <!-- Rate Button-->
+            <Button Grid.Column="2" Grid.Row="1" Margin="0,-50,0,0" HeightRequest="80" WidthRequest="80" CornerRadius="40" ImageSource="star" BackgroundColor="White">
+                <Button.Shadow>
+                       <Shadow Brush="#bcbcbc"
+                           Offset="5,5" 
+                           Opacity="0.6"/>
+                </Button.Shadow>
+            </Button>
+
+            <!-- Details-->
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Text="Madeline, 20" FontAttributes="Bold" Margin="0,20,0,0" FontSize="22"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Text="Graphic Designer" FontAttributes="Bold" FontSize="16" TextColor="#a3a3a3"/>
+            <Button Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="55" WidthRequest="55" CornerRadius="10" ImageSource="telegram" BackgroundColor="White">
+                <Button.Shadow>
+                       <Shadow Brush="#bcbcbc"
+                           Offset="5,5" 
+                           Opacity="0.6"/>
+                </Button.Shadow>
+            </Button>
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Text="About" FontAttributes="Bold" FontSize="16"  Margin="0,20,0,0"/>
+            <Label Grid.Column="2" Grid.Row="4" Text="Read more" FontAttributes="Bold" FontSize="15" TextColor="#c0bebe" HorizontalTextAlignment="End"  Margin="0,20,0,0"/>
+            <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="5" Text="My name is Madeline and I enjoy  meet new people and finding ways to help them have an uplifting experience ..." FontAttributes="Bold" FontSize="16" TextColor="#a3a3a3"/>
+
+            <!-- Interests list-->
+            <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Text="Interest" FontAttributes="Bold" FontSize="16"  Margin="0,20,0,0"/>
+
+            <CollectionView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" HorizontalScrollBarVisibility="Never"
+            ItemsSource="{Binding profile}"
+            HeightRequest="120" 
+            VerticalOptions="FillAndExpand">
+                 <CollectionView.ItemsLayout>
+                   <GridItemsLayout Orientation="Horizontal"
+                                    Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="0,0,20,0">
+                            <Button Text="{Binding Description}" TextColor="Black" BackgroundColor="{Binding BgColor}" HorizontalOptions="StartAndExpand"  CornerRadius="20" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid> 
+    </ScrollView>
+    </ContentPage>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DatingProfileUI.Views.NewPage1"
+             Title="NewPage1">
+    <VerticalStackLayout>
+       <Border WidthRequest="100"
+               HeightRequest="100"
+               Stroke="Black"
+               StrokeThickness="4"
+               BackgroundColor="Yellow"
+               StrokeShape="RoundRectangle 50">
+            <Border.Shadow>
+                <Shadow Brush="red"
+                        Offset="10,10"
+                        Opacity=".8"/> 
+            </Border.Shadow>
+            <Image Source="https://media.npr.org/assets/img/2017/09/12/macaca_nigra_self-portrait-3e0070aa19a7fe36e802253048411a38f14a79f8-s1100-c50.jpg"
+                   HeightRequest="98"
+                   WidthRequest="98"/>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
